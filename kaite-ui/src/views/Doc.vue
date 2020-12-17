@@ -48,9 +48,10 @@ export default {
   }
   > .content {
     flex-grow: 1; //高度变化时占据剩余空间
-    padding-top: 55px;
-    padding-left: 156px;
+    padding-top: 75px;
+    padding-left: 153px;
     @media (max-width: 500px) {
+      padding-top: 52px;
       padding-left: 0;
     }
   }
