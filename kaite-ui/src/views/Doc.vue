@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Topnav />
+  <div class="layout">
+    <Topnav class="nav" />
     <div class="content">
       <aside v-if="menuVisible">
         <h2>组件列表</h2>
@@ -39,14 +39,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  > .nav {
+    flex-shrink: 0; //高度变化时不收缩
+  }
+  > .content {
+    flex-grow: 1; //高度变化时占据剩余空间
+    padding-top: 55px;
+    padding-left: 156px;
+    @media (max-width: 500px) {
+      padding-left: 0;
+    }
+  }
+}
 .content {
-  position: relative;
+  display: flex;
+  > aside {
+    flex-shrink: 0; //宽度变化时不收缩
+  }
+  > main {
+    flex-grow: 1; //宽度变化时占据剩余空间
+    padding: 16px;
+    background-color: lightgreen;
+  }
 }
 aside {
   background: lightblue;
   width: 150px;
   padding: 16px;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 75px;
+  height: 100%;
   > h2 {
     margin-bottom: 4px;
   }
@@ -55,10 +83,8 @@ aside {
       padding: 4px 0;
     }
   }
-  @media (max-width: 500px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+}
+main {
+  overflow: auto;
 }
 </style>

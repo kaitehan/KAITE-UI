@@ -16,3 +16,6 @@ export const router = createRouter({
     },
   ],
 });
+router.afterEach(() => {
+  console.log(1111);
+});
