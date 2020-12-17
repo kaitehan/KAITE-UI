@@ -1,6 +1,6 @@
 <template>
   <div class="topnav">
-    <div class="logo" @click="toggleMenu">TAP</div>
+    <span class="toggleAside" @click="toggleMenu"></span>
     <div class="logo">LOGO</div>
     <ul class="menu">
       <li>菜单1</li>
@@ -25,6 +25,8 @@ export default {
   background-color: pink;
   display: flex;
   padding: 16px;
+  justify-content: center;
+  align-items: center;
   > .logo {
     max-width: 6em;
     margin-right: auto;
@@ -36,6 +38,16 @@ export default {
     flex-wrap: nowrap;
     > li {
       margin: 10px 1em;
+    }
+  }
+  > .toggleAside {
+  }
+  @media (max-width: 500px) {
+    > .menu {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto;
     }
   }
 }
