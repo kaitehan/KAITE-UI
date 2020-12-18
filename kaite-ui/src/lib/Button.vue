@@ -1,9 +1,10 @@
 <template>
-  <button class="kaite-button" :class="{ [`theme-${theme}`]: theme }">
+  <button class="kaite-button" :class="classes">
     <slot></slot>
   </button>
 </template>
 <script>
+import { computed } from "vue";
 export default {
   inheritAttrs: false,
   props: {
@@ -11,11 +12,21 @@ export default {
       type: String,
       default: "button",
     },
+    size: {
+      type: String,
+      default: "normal",
+    },
   },
 
-  setup(props, context) {
-    const { ...rest } = context.attrs;
-    return { rest };
+  setup(props) {
+    const { theme, size } = props;
+    const classes = computed(() => {
+      return {
+        [`kaite-theme-${theme}`]: theme,
+        [`kaite-size-${size}`]: size,
+      };
+    });
+    return { classes };
   },
 };
 </script>
@@ -59,6 +70,36 @@ $radius: 4px;
   }
   &::-moz-focus-inner {
     border: 0;
+  }
+  &.kaite-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,
+    &:focus {
+      color: lighten($blue, 20%);
+    }
+  }
+  &.kaite-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
+  }
+  &.kaite-theme-button {
+    &.kaite-size-big {
+      font-size: 24px;
+      height: 48px;
+      padding: 0 16px;
+    }
+    &.kaite-size-small {
+      font-size: 12px;
+      height: 20px;
+      padding: 0 4px;
+    }
   }
 }
 </style>
