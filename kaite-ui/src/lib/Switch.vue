@@ -1,6 +1,10 @@
 <template>
   <div>
-    <button @click="toggle" :class="{ checked: value }"><span></span></button>
+    <button @click="toggle" :class="{ checked: value }">
+      <span></span>
+      <p v-if="!value">0</p>
+      <p v-else>1</p>
+    </button>
   </div>
 </template>
 <script lang="ts">
@@ -32,7 +36,7 @@ button {
   border-radius: $h/2;
   outline: none;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: all 0.25s ease-in-out;
   &:focus {
     box-shadow: 0 0 10px rgba(191, 191, 191, 0.7);
   }
@@ -45,6 +49,16 @@ button {
     border: none;
     border-radius: $h/2;
     background-color: #fff;
+    transition: all 0.25s ease-in-out;
+  }
+  > p {
+    display: inline-block;
+    width: 12px;
+    height: $h;
+    font-size: 12px;
+    color: #fff;
+    margin: 0 7px 0 25px;
+    transition: margin 0.25s ease-in-out;
   }
   &:active {
     box-shadow: none;
@@ -57,6 +71,9 @@ button.checked {
   background-color: #1890ff;
   > span {
     left: calc(100% - #{$h2} - 2px);
+  }
+  > p {
+    margin: 0 25px 0 7px;
   }
   &:focus {
     box-shadow: 0 0 10px rgba(24, 144, 255, 0.7);
