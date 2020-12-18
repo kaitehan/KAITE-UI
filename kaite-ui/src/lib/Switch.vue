@@ -36,13 +36,17 @@ $h2: $h - 4px;
   line-height: $h;
   vertical-align: middle;
   border: none;
+  margin-bottom: 8px;
   background-color: #bfbfbf; //#1890ff
   border-radius: $h/2;
   outline: none;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
   &:focus {
-    box-shadow: 0 0 10px rgba(191, 191, 191, 0.7);
+    box-shadow: 0 0 5px rgba(191, 191, 191, 0.5);
+    &:hover {
+      box-shadow: none;
+    }
   }
   > span {
     position: absolute;
@@ -65,7 +69,6 @@ $h2: $h - 4px;
     transition: margin 0.25s ease-in-out;
   }
   &:active {
-    box-shadow: none;
     > span {
       width: $h + 2px;
     }
@@ -80,10 +83,13 @@ $h2: $h - 4px;
     margin: 0 25px 0 7px;
   }
   &:focus {
-    box-shadow: 0 0 10px rgba(24, 144, 255, 0.7);
+    box-shadow: 0 0 5px rgba(24, 144, 255, 0.5);
+    &:hover {
+      box-shadow: none;
+    }
   }
+
   &:active {
-    box-shadow: none;
     > span {
       width: $h + 2px;
       margin-left: -6px;

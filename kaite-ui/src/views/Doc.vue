@@ -64,7 +64,7 @@ export default {
   > main {
     flex-grow: 1; //宽度变化时占据剩余空间
     padding: 16px;
-    background-color: lightgreen;
+    background-color: #fff;
   }
 }
 aside {
