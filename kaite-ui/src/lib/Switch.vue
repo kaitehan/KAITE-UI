@@ -1,6 +1,10 @@
 <template>
   <div>
-    <button @click="toggle" :class="{ checked: value }">
+    <button
+      class="kaite-switch"
+      @click="toggle"
+      :class="{ 'kaite-checked': value }"
+    >
       <span></span>
       <p v-if="!value">0</p>
       <p v-else>1</p>
@@ -24,7 +28,7 @@ export default {
 <style lang="scss" scoped>
 $h: 22px;
 $h2: $h - 4px;
-button {
+.kaite-switch {
   position: relative;
   display: inline-block;
   width: $h * 2;
@@ -67,7 +71,7 @@ button {
     }
   }
 }
-button.checked {
+.kaite-switch.kaite-checked {
   background-color: #1890ff;
   > span {
     left: calc(100% - #{$h2} - 2px);
