@@ -33,6 +33,9 @@ button {
   outline: none;
   cursor: pointer;
   transition: all 0.25s;
+  &:focus {
+    box-shadow: 0 0 10px rgba(191, 191, 191, 0.7);
+  }
   > span {
     position: absolute;
     top: 2px;
@@ -43,11 +46,27 @@ button {
     border-radius: $h/2;
     background-color: #fff;
   }
+  &:active {
+    box-shadow: none;
+    > span {
+      width: $h + 2px;
+    }
+  }
 }
 button.checked {
   background-color: #1890ff;
   > span {
     left: calc(100% - #{$h2} - 2px);
+  }
+  &:focus {
+    box-shadow: 0 0 10px rgba(24, 144, 255, 0.7);
+  }
+  &:active {
+    box-shadow: none;
+    > span {
+      width: $h + 2px;
+      margin-left: -6px;
+    }
   }
 }
 </style>
