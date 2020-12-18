@@ -9,9 +9,21 @@
   </div>
   <h1>示例2</h1>
   <div>
-    <Button size="big">大大大 </Button>
-    <Button>normal </Button>
-    <Button size="small">小小小 </Button>
+    <div>
+      <Button size="big">大大大 </Button>
+      <Button>normal </Button>
+      <Button size="small">小小小 </Button>
+    </div>
+    <div>
+      <Button theme="link" size="big">大大大 </Button>
+      <Button theme="link">normal </Button>
+      <Button theme="link" size="small">小小小 </Button>
+    </div>
+    <div>
+      <Button theme="text" size="big">大大大 </Button>
+      <Button theme="text">normal </Button>
+      <Button theme="text" size="small">小小小 </Button>
+    </div>
   </div>
 </template>
 <script lang="ts">

@@ -3,7 +3,7 @@
     <slot></slot>
   </button>
 </template>
-<script>
+<script lang="ts">
 import { computed } from "vue";
 export default {
   inheritAttrs: false,
@@ -89,17 +89,16 @@ $radius: 4px;
       background: darken(white, 5%);
     }
   }
-  &.kaite-theme-button {
-    &.kaite-size-big {
-      font-size: 24px;
-      height: 48px;
-      padding: 0 16px;
-    }
-    &.kaite-size-small {
-      font-size: 12px;
-      height: 20px;
-      padding: 0 4px;
-    }
+
+  &.kaite-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.kaite-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
   }
 }
 </style>
