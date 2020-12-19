@@ -1,21 +1,23 @@
 <template>
   <template v-if="visible">
-    <div class="kaite-dialog-overlay" @click="onClickOverlay"></div>
-    <div class="kaite-dialog-wrapper">
-      <div class="kaite-dialog">
-        <header>
-          <slot name="title" />
-          <span class="kaite-dialog-close" @click="close"></span>
-        </header>
-        <main>
-          <slot name="content" />
-        </main>
-        <footer>
-          <Button level="main" @click="ok">OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+    <teleport to="body">
+      <div class="kaite-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="kaite-dialog-wrapper">
+        <div class="kaite-dialog">
+          <header>
+            <slot name="title" />
+            <span class="kaite-dialog-close" @click="close"></span>
+          </header>
+          <main>
+            <slot name="content" />
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </teleport>
   </template>
 </template>
 
