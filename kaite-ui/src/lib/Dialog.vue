@@ -4,11 +4,11 @@
     <div class="kaite-dialog-wrapper">
       <div class="kaite-dialog">
         <header>
-          标题<span class="kaite-dialog-close" @click="close"></span>
+          <slot name="title" />
+          <span class="kaite-dialog-close" @click="close"></span>
         </header>
         <main>
-          <p>1</p>
-          <p>2</p>
+          <slot name="content" />
         </main>
         <footer>
           <Button level="main" @click="ok">OK</Button>
