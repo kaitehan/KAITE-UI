@@ -43,11 +43,15 @@
       <Button theme="text" level="danger">危险文本按钮 </Button>
     </div>
   </div>
-  <h1>实例4</h1>
+  <h1>示例4</h1>
   <div>
     <Button disabled>你好 </Button>
     <Button theme="link" disabled>你好 </Button>
     <Button theme="text" disabled>你好 </Button>
+  </div>
+  <h1>示例5</h1>
+  <div>
+    <Button loading>加载中 </Button>
   </div>
 </template>
 <script lang="ts">
