@@ -1,5 +1,5 @@
 <template>
-  <button class="kaite-button" :class="classes">
+  <button class="kaite-button" :class="classes" :disabled="disabled">
     <slot></slot>
   </button>
 </template>
@@ -19,6 +19,10 @@ export default {
     level: {
       type: String,
       default: "normal",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -47,6 +51,7 @@ $blue: #40a9ff;
 $red: #f56c6c;
 // 角度参数
 $radius: 4px;
+$grey: #909399;
 .kaite-button {
   box-sizing: border-box;
   height: $h;
@@ -85,6 +90,7 @@ $radius: 4px;
     &:hover,
     &:focus {
       color: lighten($blue, 20%);
+      text-decoration: underline;
     }
   }
   &.kaite-theme-text {
@@ -150,6 +156,28 @@ $radius: 4px;
       &:hover,
       &:focus {
         color: darken($red, 10%);
+      }
+    }
+  }
+  &.kaite-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      border-color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+      //   pointer-events: none;
+    }
+  }
+  &.kaite-theme-link,
+  &.kaite-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        text-decoration: none;
+        background-color: transparent;
       }
     }
   }
