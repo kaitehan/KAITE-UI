@@ -1,16 +1,18 @@
 <template>
   <template v-if="visible">
-    <div class="kaite-dialog-overlay"></div>
+    <div class="kaite-dialog-overlay" @click="onClickOverlay"></div>
     <div class="kaite-dialog-wrapper">
       <div class="kaite-dialog">
-        <header>标题<span class="kaite-dialog-close"></span></header>
+        <header>
+          标题<span class="kaite-dialog-close" @click="close"></span>
+        </header>
         <main>
           <p>1</p>
           <p>2</p>
         </main>
         <footer>
-          <Button level="main">OK</Button>
-          <Button>Cancel</Button>
+          <Button level="main" @click="ok">OK</Button>
+          <Button @click="cancel">Cancel</Button>
         </footer>
       </div>
     </div>
@@ -25,11 +27,42 @@ export default {
       type: Boolean,
       default: false,
     },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true,
+    },
+    ok: Function,
+    cancel: Function,
   },
   components: {
     Button,
   },
-  setup() {},
+  setup(props, context) {
+    const close = () => {
+      context.emit("update:visible", false);
+    };
+    const onClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
+        close();
+      }
+    };
+    const ok = () => {
+      if (props.ok?.() !== false) {
+        close();
+      }
+    };
+    const cancel = () => {
+      if (props.cancel?.()) {
+        close();
+      }
+    };
+    return {
+      close,
+      onClickOverlay,
+      ok,
+      cancel,
+    };
+  },
 };
 </script>
 
