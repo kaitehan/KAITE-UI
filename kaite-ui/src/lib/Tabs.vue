@@ -38,29 +38,26 @@ export default {
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
 
-    // const x = () => {
-    //   const { width } = selectedItem.value.getBoundingClientRect();
-    //   indicator.value.style.width = width + "px";
-    //   const { left: left1 } = container.value.getBoundingClientRect();
-    //   const { left: left2 } = selectedItem.value.getBoundingClientRect();
-    //   const left = left2 - left1;
-    //   indicator.value.style.left = left + "px";
-    // };
     onMounted(() => {
-      watchEffect(() => {
-        const { width } = selectedItem.value.getBoundingClientRect();
-        console.log(selectedItem.value);
+      watchEffect(
+        () => {
+          const { width } = selectedItem.value.getBoundingClientRect();
+          console.log(selectedItem.value);
 
-        indicator.value.style.width = width + "px";
-        const { left: left1 } = container.value.getBoundingClientRect();
-        const { left: left2 } = selectedItem.value.getBoundingClientRect();
-        const left = left2 - left1;
-        console.log(left);
-        indicator.value.style.left = left + "px";
-      });
+          indicator.value.style.width = width + "px";
+          const { left: left1 } = container.value.getBoundingClientRect();
+          const { left: left2 } = selectedItem.value.getBoundingClientRect();
+          const left = left2 - left1;
+          console.log(left);
+          indicator.value.style.left = left + "px";
+        },
+        // 解决异步
+        {
+          flush: "sync", //效果更新需要缓冲时间
+        }
+      );
     });
-    // onMounted(x);
-    // onUpdated(x);
+
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
