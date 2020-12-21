@@ -42,13 +42,10 @@ export default {
       watchEffect(
         () => {
           const { width } = selectedItem.value.getBoundingClientRect();
-          console.log(selectedItem.value);
-
           indicator.value.style.width = width + "px";
           const { left: left1 } = container.value.getBoundingClientRect();
           const { left: left2 } = selectedItem.value.getBoundingClientRect();
           const left = left2 - left1;
-          console.log(left);
           indicator.value.style.left = left + "px";
         },
         // 解决异步
