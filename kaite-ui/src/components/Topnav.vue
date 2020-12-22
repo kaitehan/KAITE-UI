@@ -7,7 +7,9 @@
       </svg>
     </div>
     <ul class="menu">
-      <li>菜单1</li>
+      <li>
+        <router-link to="/doc">文档</router-link>
+      </li>
       <li>菜单2</li>
     </ul>
   </div>
