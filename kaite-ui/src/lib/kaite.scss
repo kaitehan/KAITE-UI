@@ -12,6 +12,21 @@
 }
 
 
+.slide-enter-active,
+.slide-leave-active {
+  transition: all .3s linear;
+}
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(-285px);
+}
 
 
-
+.fade-enter-active,
+.fade-leave-active{
+  transition: all .25s linear;
+}
+.fade-enter-from,
+.fade-leave-to{
+  transform: rotateX(-90deg);
+}
