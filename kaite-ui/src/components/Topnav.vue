@@ -7,10 +7,10 @@
     >
       <transition name="fade">
         <svg v-if="menuVisible">
-          <use xlink:href="#icon-menu"></use>
+          <use xlink:href="#icon-close"></use>
         </svg>
         <svg v-else>
-          <use xlink:href="#icon-close"></use>
+          <use xlink:href="#icon-menu"></use>
         </svg>
       </transition>
     </span>
