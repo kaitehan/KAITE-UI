@@ -49,13 +49,13 @@ export default {
       }
     };
     const ok = () => {
-      if (props.ok?.() !== false) {
-        // 等价于props.ok && props.ok() !==false
+      if (props.ok && props.ok() !== false) {
+        // 等价于props.ok?.() !==false
         close();
       }
     };
     const cancel = () => {
-      props.cancel?.(); // 等价于props.cancel && props.cancel()
+      props.cancel && props.cancel(); // 等价于props.cancel?.()
       close();
     };
     return {
