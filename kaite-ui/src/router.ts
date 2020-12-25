@@ -7,7 +7,10 @@ import ButtonDemo from "./components/ButtonDemo.vue";
 import DialogDemo from "./components/DialogDemo.vue";
 import TabsDemo from "./components/TabsDemo.vue";
 import DocFileDemo from "./components/DocFileDemo.vue";
-import Markdown from "./components/Markdown.vue";
+
+import Intro from "./views/Intro.vue";
+import Install from "./views/Install.vue";
+import Getstarted from "./views/Getstarted.vue";
 
 import { h } from "vue";
 
@@ -23,18 +26,15 @@ export const router = createRouter({
         { path: "", component: DocFileDemo },
         {
           path: "intro",
-          component: h(Markdown, { path: "../markdown/intro.md", key: "1" }),
+          component: Intro,
         },
         {
           path: "get-started",
-          component: h(Markdown, {
-            path: "../markdown/get-started.md",
-            key: "2",
-          }),
+          component: Getstarted,
         },
         {
           path: "install",
-          component: h(Markdown, { path: "../markdown/install.md", key: "3" }),
+          component: Install,
         },
         { path: "switch", component: SwitchDemo },
         { path: "button", component: ButtonDemo },

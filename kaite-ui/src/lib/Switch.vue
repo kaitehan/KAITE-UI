@@ -4,6 +4,7 @@
       class="kaite-switch"
       @click="toggle"
       :class="{ 'kaite-checked': value }"
+      :disabled="disabled"
     >
       <span></span>
       <p v-if="!value">0</p>
@@ -16,6 +17,10 @@ import { ref } from "vue";
 export default {
   props: {
     value: Boolean,
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props, context) {
     const toggle = () => {
@@ -42,6 +47,14 @@ $h2: $h - 4px;
   outline: none;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
+  &[disabled] {
+    // cursor: not-allowed;
+    pointer-events: none;
+    // color: $grey;
+    // > span {
+    //   pointer-events: none;
+    // }
+  }
   &:focus {
     box-shadow: 0 0 5px rgba(191, 191, 191, 0.5);
     &:hover {
