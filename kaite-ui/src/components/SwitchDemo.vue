@@ -10,7 +10,7 @@
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="flag" /&gt;</pre>
+        <pre>{{ Switch1Demo.__sourceCode }}</pre>
       </div>
     </div>
     <div class="demo">
@@ -22,7 +22,7 @@
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
+        <pre>{{ Switch2Demo.__sourceCode }}</pre>
       </div>
     </div>
   </div>
@@ -32,13 +32,12 @@ import Switch from "../lib/Switch.vue";
 import Button from "../lib/Button.vue";
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
+
 import { ref } from "vue";
 export default {
   components: { Switch, Button, Switch1Demo, Switch2Demo },
   setup() {
-    const flag = ref(false);
-    const bool = ref(false);
-    return { flag, bool };
+    return { Switch1Demo, Switch2Demo };
   },
 };
 </script>
@@ -62,6 +61,7 @@ $border-color: #d9d9d9;
   &-code {
     padding: 8px 16px;
     border-top: 1px dashed $border-color;
+    overflow: auto;
     > pre {
       line-height: 1.1;
       font-family: Consolas, "Courier New", Courier, monospace;
