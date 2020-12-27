@@ -9,7 +9,9 @@ import Demo from "../Demo.vue";
 import Dialog1Demo from "./DialogDemo/Dialog1.demo.vue";
 import Dialog2Demo from "./DialogDemo/Dialog2.demo.vue";
 export default {
-  components: {},
+  components: {
+    Demo,
+  },
   setup() {
     return {
       Dialog1Demo,
