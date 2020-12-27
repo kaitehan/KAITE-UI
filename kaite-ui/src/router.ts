@@ -5,7 +5,7 @@ import Doc from "./views/Doc.vue";
 import SwitchDemo from "./components/SwitchPage/SwitchDemo.vue";
 import ButtonDemo from "./components/ButtonPage/ButtonDemo.vue";
 import DialogDemo from "./components/DialogPage/DialogDemo.vue";
-import TabsDemo from "./components/TabsDemo.vue";
+import TabsDemo from "./components/TabsPage/TabsDemo.vue";
 import DocFileDemo from "./components/DocFileDemo.vue";
 
 import Intro from "./views/Intro.vue";
