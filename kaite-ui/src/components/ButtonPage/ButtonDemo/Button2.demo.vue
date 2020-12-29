@@ -3,9 +3,9 @@
 </demo>
 <template>
   <div>
-      <Button level="primary" size="big">大大大</Button>
-      <Button level="primary">普普通</Button>
-      <Button level="primary" size="small">小小小</Button
+    <Button level="primary" size="big">大大大</Button>
+    <Button level="primary">普普通</Button>
+    <Button level="primary" size="small">小小小</Button>
   </div>
 </template>
 
