@@ -63,11 +63,15 @@ $border-color: #333;
     border-bottom: 1px solid $border-color;
   }
   &-component {
-    padding: 16px;
+    padding: 20px 16px;
   }
   &-actions {
     padding: 8px 16px;
+
     border-top: 1px solid $border-color;
+    > :first-child {
+      animation: none;
+    }
   }
   &-code {
     // padding: 8px 16px;
