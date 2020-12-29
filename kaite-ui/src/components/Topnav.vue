@@ -47,33 +47,48 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+$lightbgc: #e8cbc0;
+$deepbgc: #44295b;
+$text: #6f2e6a;
 .topnav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid #ccc;
   background-color: #fff;
+  box-shadow: 0 5px 5px rgba(#333, 0.1);
   display: flex;
   padding: 16px;
   z-index: 10;
+  color: $text;
   justify-content: center;
   align-items: center;
   > .logo {
     max-width: 6em;
     margin-right: auto;
-    svg {
-      width: 42px;
-      height: 34px;
+    > a {
+      text-decoration: none;
+      svg {
+        width: 42px;
+        height: 34px;
+      }
     }
   }
   > .menu {
     display: flex;
     flex-direction: row;
+    // 不换行
     white-space: nowrap;
     flex-wrap: nowrap;
     > li {
       margin: 10px 1em;
+      > a {
+        text-decoration: none;
+        &:hover {
+          color: #be3765;
+          border-bottom: none;
+        }
+      }
     }
   }
   > .toggleAside {

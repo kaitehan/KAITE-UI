@@ -5,9 +5,13 @@
       <component :is="component" />
     </div>
     <div class="demo-actions">
-      <Button @click="toggleCode">查看代码</Button>
+      <Button @click="toggleCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="toggleCode" v-else>查看代码</Button>
     </div>
-    <div class="demo-code" v-if="codeVisible">
+    <!-- <transition name="code">
+      <SourceCode v-if="codeVisible" :code="html"></SourceCode>
+    </transition> -->
+    <div :class="'demo-code' + [codeVisible ? ' code-show ' : ' code-hidden ']">
       <pre class="language-html" v-html="html" />
     </div>
   </div>
@@ -15,6 +19,7 @@
 
 <script lang="ts">
 import Button from "../lib/Button.vue";
+// import SourceCode from "./SourceCode.vue";
 import "prismjs";
 import "prismjs/themes/prism.css";
 import { computed, ref } from "vue";
@@ -22,6 +27,7 @@ const Prism = (window as any).Prism;
 export default {
   components: {
     Button,
+    // SourceCode,
   },
   props: {
     component: Object,
@@ -34,6 +40,7 @@ export default {
         "html"
       );
     });
+
     const toggleCode = () => (codeVisible.value = !codeVisible.value);
     const codeVisible = ref(false);
     return {
@@ -51,6 +58,7 @@ $border-color: #d9d9d9;
 .demo {
   border: 1px solid $border-color;
   margin: 16px 0 32px;
+  max-width: 500px;
   > h2 {
     font-size: 20px;
     padding: 8px 16px;
@@ -64,14 +72,24 @@ $border-color: #d9d9d9;
     border-top: 1px dashed $border-color;
   }
   &-code {
-    padding: 8px 16px;
+    // padding: 8px 16px;
     border-top: 1px dashed $border-color;
     overflow: auto;
     > pre {
       line-height: 1.1;
       font-family: Consolas, "Courier New", Courier, monospace;
       margin: 0;
+      padding: 24px;
     }
+  }
+  .code-hidden {
+    transition: all 0.4s cubic-bezier(0.39, 0.7, 0.18, 0.9);
+    max-height: 0;
+    border: none;
+  }
+  .code-show {
+    max-height: 800px;
+    transition: all 1s cubic-bezier(0.39, 0.7, 0.18, 0.9);
   }
 }
 </style>
