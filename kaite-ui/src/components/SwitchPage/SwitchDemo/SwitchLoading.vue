@@ -1,9 +1,9 @@
 <demo>
-常规用法
+支持Loading
 </demo>
 
 <template>
-  <Switch v-model:value="bool" />
+  <Switch v-model:value="bool" loading />
 </template>
 
 <script lang="ts">
@@ -14,7 +14,7 @@ export default {
     Switch,
   },
   setup() {
-    const bool = ref(true);
+    const bool = ref(false);
     return {
       bool,
     };

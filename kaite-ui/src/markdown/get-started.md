@@ -1,30 +1,60 @@
-# 开始
+## 下载与使用
 
-欢迎使用kaiteUI
+### 安装
 
----
+```
+    npm install alive-work-ui -S
+```
 
-## 介绍
+## 引入 `alive-work-ui`
 
-kaiteUI是一个简洁的前端UI框架,基于vue3.0的开源UI组件库, 使用`vite` `vue3.0` `typescript`搭建, 由[kaite](https://github.com/kaitehan)开发, 如果你不满框架原生样式, 不必担心类名命名的问题，覆盖样式也是可以的, 同时kaiteUI还支持`移动端`显示
+#### 完整引入
 
+```
+    import 'alive-work-ui/package/lib/alive-work-ui.css'
+    import { createApp } from 'vue'
+    import App from './App.vue'
+    import { AliveWorkUI } from 'alive-work-ui'
 
+    createApp(App)
+      .use(AliveWorkUI)
+      .mount('#app')
+```
 
-<br><br>
+> 以上代码便完成了 alive-work-ui 的引入。需要注意的是，样式文件需要单独引入。
 
->#### 版本:***1.1.0***
->更新内容:<a href='#/Table'>添加Table组件</a>
----
->#### 版本:***1.0.0***
->* 更新内容:暂无
----
+#### 按需引入
 
+> 如果你只希望引入部分组件，比如 Button ，那么需要在 main.js 中写入以下内容：
 
+```
+    import 'alive-work-ui/package/lib/alive-work-ui.css'
+    import { createApp } from 'vue'
+    import { Button } from 'alive-work-ui'
+    import App from './App.vue'
 
-<div style='display:flex;justify-content:space-between;margin:20px 0 '>
-<!-- <div>上一节:<a href='#/Use'>安装与使用</a></div>   -->
-<div>下一节:<a href='#/Use'>安装与使用</a></div>  
-</div>
+    createApp(App).use(Button).mount('#app')
+```
 
+> 完整组件列表和引入方式
 
+```
+    import App from './App.vue'
+    import { createApp } from 'vue'
+    import {
+        Button,
+        Switch,
+        Dialog,
+        TabBox,
+        Tabs,
+        Table
+    } from 'alive-work-ui'
 
+    createApp(App)
+        .component('Button',Button)
+        .component('Switch',Switch)
+        .component('Dialog',Dialog)
+        .component('TabBox',TabBox)
+        .component('Tabs',Tabs)
+        .component('Table',Table)
+```

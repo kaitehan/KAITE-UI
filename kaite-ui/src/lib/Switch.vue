@@ -4,11 +4,11 @@
       class="kaite-switch"
       @click="toggle"
       :class="{ 'kaite-checked': value }"
-      :disabled="disabled"
+      :disabled="loading ? true : disabled"
     >
-      <span></span>
-      <p v-if="!value">0</p>
-      <p v-else>1</p>
+      <span><span class="kaite-switch-loading" v-if="loading"></span></span>
+      <p v-if="value">on</p>
+      <p v-else>off</p>
     </button>
   </div>
 </template>
@@ -18,6 +18,10 @@ export default {
   props: {
     value: Boolean,
     disabled: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
       type: Boolean,
       default: false,
     },
@@ -48,13 +52,9 @@ $h2: $h - 4px;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
   &[disabled] {
-    // cursor: not-allowed;
     pointer-events: none;
-    // color: $grey;
-    // > span {
-    //   pointer-events: none;
-    // }
   }
+
   &:focus {
     box-shadow: 0 0 5px rgba(191, 191, 191, 0.5);
     &:hover {
@@ -71,14 +71,26 @@ $h2: $h - 4px;
     border-radius: $h/2;
     background-color: #fff;
     transition: all 0.25s ease-in-out;
+    > .kaite-switch-loading {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      // margin-right: 4px;
+      border-radius: 8px;
+      border-color: lighten(#8486ab, 20%) lighten(#8486ab, 10%) #8486ab
+        transparent;
+      border-style: solid;
+      border-width: 2px;
+      animation: kaite-spin 1s infinite linear;
+    }
   }
   > p {
     display: inline-block;
-    width: 12px;
+    width: 14px;
     height: $h;
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
-    margin: 0 7px 0 25px;
+    margin: 0 7px 0 22px;
     transition: margin 0.25s ease-in-out;
   }
   &:active {

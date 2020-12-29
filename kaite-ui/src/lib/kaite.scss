@@ -10,7 +10,33 @@
      "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
 
 }
-
+.first-title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+.second-title {
+  h2 {
+    position: relative;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    &::before {
+      content: "#";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -0.7em;
+      color: #ff1f1f;
+      font-weight: 700;
+    }
+  }
+  p {
+    font-size: 0.9em;
+    span {
+      font-weight: 700;
+      color: #ff1f1f;
+    }
+  }
+}
 
 .slide-enter-active,
 .slide-leave-active {
@@ -32,6 +58,11 @@
 }
 
 
-$lightbgc:#aea3b4;
-$deepbgc:#737aa7;
-$text:#6f486b;
+@keyframes kaite-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
