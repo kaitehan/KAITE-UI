@@ -1,10 +1,10 @@
 <demo>
-基本用法
+支持 closeOnClickOverlay
 </demo>
 <template>
   <div>
-    <Button level="primary" @click="toggle">打开Dialog</Button>
-    <Dialog v-model:visible="showDialog">
+    <Button level="warning" @click="toggle">禁用遮罩层关闭Dialog</Button>
+    <Dialog v-model:visible="showDialog" :closeOnClickOverlay="false">
       <p>这是内容</p>
     </Dialog>
   </div>
@@ -24,6 +24,7 @@ export default {
     const toggle = () => {
       showDialog.value = !showDialog.value;
     };
+
     return {
       showDialog,
       toggle,
