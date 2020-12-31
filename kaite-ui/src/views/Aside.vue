@@ -41,8 +41,8 @@ export default {
 };
 </script>
 <style lang="scss">
-$lightbgc: #e8cbc0;
-$deepbgc: #44295b;
+$lightbgc: #fff9f9;
+$deepbgc: #c67085;
 $text: #6f2e6a;
 aside {
   position: absolute;
@@ -80,7 +80,7 @@ aside {
       }
       .router-link-active {
         background: $lightbgc;
-        color: #fff;
+        // color: #fff;
         border-right: 3px solid $deepbgc;
         @media (min-width: 500px) {
           border-right: none;

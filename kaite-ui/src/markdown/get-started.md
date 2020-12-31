@@ -15,16 +15,16 @@
       .mount('#app')
 ```
 
-> 以上代码便完成了 alive-work-ui 的引入。需要注意的是，样式文件需要单独引入。
+> 以上代码便完成了 kaite-ui 的引入。需要注意的是，样式文件需要单独引入。
 
 #### 按需引入
 
 > 如果你只希望引入部分组件，比如 Button ，那么需要在 main.js 中写入以下内容：
 
 ```
-    import 'alive-work-ui/package/lib/alive-work-ui.css'
+    import 'kaite-ui/package/lib/kaite-ui.css'
     import { createApp } from 'vue'
-    import { Button } from 'alive-work-ui'
+    import { Button } from 'kaite-ui'
     import App from './App.vue'
 
     createApp(App).use(Button).mount('#app')
@@ -41,8 +41,7 @@
         Dialog,
         TabBox,
         Tabs,
-        Table
-    } from 'alive-work-ui'
+    } from 'kaite-ui'
 
     createApp(App)
         .component('Button',Button)
@@ -50,5 +49,4 @@
         .component('Dialog',Dialog)
         .component('TabBox',TabBox)
         .component('Tabs',Tabs)
-        .component('Table',Table)
 ```

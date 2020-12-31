@@ -163,11 +163,13 @@ $border-color: #d9d9d9;
     &::after {
       transform: translate(-50%, -50%) rotate(45deg);
     }
-    &:hover {
-      background-color: #f57272;
-      &::before,
-      &::after {
-        background-color: #fff;
+    @media (min-width: 500px) {
+      &:hover {
+        background-color: #f57272;
+        &::before,
+        &::after {
+          background-color: #fff;
+        }
       }
     }
   }
