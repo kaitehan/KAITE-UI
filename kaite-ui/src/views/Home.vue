@@ -4,7 +4,7 @@
       <Topnav />
       <div class="banner">
         <h1>kaiteUI</h1>
-        <h2>一个厉害的UI框架</h2>
+        <h2>基于vue3.0的UI框架</h2>
         <p class="actions">
           <a href="https://github.com/kaitehan">github</a>
           <router-link to="/doc">开始</router-link>
@@ -111,7 +111,8 @@ export default {
   }
 }
 .banner {
-  padding: 100px 0;
+  padding: 80px 0;
+  margin-top: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,16 +122,18 @@ export default {
 
   > .actions {
     padding: 8px 4px;
+    margin-top: 20px;
     color: white;
     outline: none;
     a {
-      margin: 0 8px;
-      background: #636fa4;
-      $h: 28px;
+      display: inline-block;
+      $h: 32px;
       height: $h;
       line-height: $h;
+      margin: 0 8px;
+      padding: 0 16px;
+      background: #636fa4;
       border-radius: $h/2;
-      padding: 5px 8px;
     }
   }
 }

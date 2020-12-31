@@ -17,7 +17,7 @@
     <div class="logo">
       <router-link to="/">
         <svg class="icon">
-          <use xlink:href="#icon-monkey"></use></svg
+          <use xlink:href="#icon-logo"></use></svg
       ></router-link>
     </div>
     <ul class="menu">
