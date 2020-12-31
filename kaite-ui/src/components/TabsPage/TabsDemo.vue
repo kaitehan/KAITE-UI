@@ -8,7 +8,7 @@
       >
     </p>
   </section>
-  <Demo :component="Tabs1Demo" />
+  <Demo :component="TabsNormal" />
   <section class="second-title">
     <h2>支持disabled属性</h2>
     <p>
@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import Demo from "../Demo.vue";
-import Tabs1Demo from "./TabsDemo/Tabs1.demo.vue";
+import TabsNormal from "./TabsDemo/TabsNormal.vue";
 import TabsDisabled from "./TabsDemo/TabsDisabled.vue";
 export default {
   components: {
@@ -28,7 +28,7 @@ export default {
   },
   setup() {
     return {
-      Tabs1Demo,
+      TabsNormal,
       TabsDisabled,
     };
   },

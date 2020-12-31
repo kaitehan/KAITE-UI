@@ -7,7 +7,7 @@
       使用<span>v-model</span>绑定一个<span>Boolean</span>类型的变量到<span>Dialog</span>组件
     </p>
   </section>
-  <Demo :component="Dialog1Demo" />
+  <Demo :component="DialogNormal" />
 
   <section class="second-title">
     <h2>支持 closeOnClickOverlay</h2>
@@ -41,13 +41,13 @@
     <h2>利用TS打开 Dialog</h2>
     <p>引入<span>openDialog</span>模块创建一个<span>Dialog</span>组件</p>
   </section>
-  <Demo :component="Dialog2Demo" />
+  <Demo :component="DialogOnCode" />
 </template>
 
 <script lang="ts">
 import Demo from "../Demo.vue";
-import Dialog1Demo from "./DialogDemo/Dialog1.demo.vue";
-import Dialog2Demo from "./DialogDemo/Dialog2.demo.vue";
+import DialogNormal from "./DialogDemo/DialogNormal.vue";
+import DialogOnCode from "./DialogDemo/DialogOnCode.vue";
 import DialogTitle from "./DialogDemo/DialogTitle.vue";
 import DialogBottom from "./DialogDemo/DialogBottom.vue";
 import DialogOverlay from "./DialogDemo/DialogOverlay.vue";
@@ -57,8 +57,8 @@ export default {
   },
   setup() {
     return {
-      Dialog1Demo,
-      Dialog2Demo,
+      DialogNormal,
+      DialogOnCode,
       DialogOverlay,
       DialogTitle,
       DialogBottom,
