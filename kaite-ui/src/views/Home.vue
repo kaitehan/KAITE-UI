@@ -111,8 +111,8 @@ export default {
   }
 }
 .banner {
-  padding: 80px 0;
-  margin-top: 70px;
+  padding: 120px 0 80px;
+  // margin-top: 70px;
   display: flex;
   justify-content: center;
   align-items: center;

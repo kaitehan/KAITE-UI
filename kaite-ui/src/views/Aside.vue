@@ -73,7 +73,7 @@ aside {
         padding: 4px 50px;
         text-decoration: none;
         &:hover {
-          color: #fff;
+          // color: #fff;
           background: $lightbgc;
           border-bottom: none;
         }
