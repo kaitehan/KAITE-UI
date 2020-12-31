@@ -3,17 +3,20 @@
     <div class="kaite-tabs-nav" ref="container">
       <div
         class="kaite-tabs-nav-item"
-        v-for="(itemTitle, index) in titles"
+        v-for="(CNode, index) in CNodes"
         :ref="
           (el) => {
-            if (itemTitle === selected) selectedItem = el;
+            if (CNode.props.title === selected) selectedItem = el;
           }
         "
-        @click="select(itemTitle)"
-        :class="{ selected: itemTitle === selected }"
+        @click="select(CNode)"
+        :class="
+          [CNode.props.title === selected ? 'selected' : ''] +
+          [CNode.props.disabled === '' ? 'disabled' : '']
+        "
         :key="index"
       >
-        {{ itemTitle }}
+        {{ CNode.props.title }}
       </div>
       <div class="kaite-tabs-nav-indicator" ref="indicator"></div>
     </div>
@@ -43,9 +46,11 @@ export default {
         () => {
           const { width } = selectedItem.value.getBoundingClientRect();
           indicator.value.style.width = width + "px";
-          const { left: left1 } = container.value.getBoundingClientRect();
-          const { left: left2 } = selectedItem.value.getBoundingClientRect();
-          const left = left2 - left1;
+          const { left: NavLeft } = container.value.getBoundingClientRect();
+          const {
+            left: SelectedLeft,
+          } = selectedItem.value.getBoundingClientRect();
+          const left = SelectedLeft - NavLeft;
           indicator.value.style.left = left + "px";
         },
         // 解决异步
@@ -54,30 +59,30 @@ export default {
         }
       );
     });
+    // 获取插槽结点
+    const CNodes = context.slots.default();
 
-    const defaults = context.slots.default();
-    defaults.forEach((tag) => {
+    CNodes.forEach((CNode) => {
       // @ts-ignore
-      if (tag.type.name !== Tab.name) {
+      if (CNode.type.name !== Tab.name) {
         throw new Error("Tabs 子标签必须是 Tab");
       }
     });
-
+    // 返回当前选中结点
     const current = computed(() => {
-      return defaults.find((tag) => tag.props.title === props.selected);
+      return CNodes.find((CNode) => CNode.props.title === props.selected);
     });
-
-    const titles = defaults.map((tag) => {
-      return tag.props.title;
-    });
-
-    const select = (title: String) => {
-      context.emit("update:selected", title);
+    // 处理点击事件，当有disabled属性时不更新选中结点，否则选中点击结点
+    const select = (CNode) => {
+      if (CNode.props.disabled === "") {
+        return;
+      }
+      context.emit("update:selected", CNode.props.title);
     };
+
     return {
       current,
-      defaults,
-      titles,
+      CNodes,
       select,
       selectedItem,
       indicator,
@@ -100,10 +105,13 @@ $border-color: #d9d9d9;
     position: relative;
 
     &-item {
-      padding: 8px 0;
-      margin: 0 16px;
+      padding: 8px;
+      margin: 0 8px;
       cursor: pointer;
-
+      &.disabled {
+        color: #ccc;
+        cursor: not-allowed;
+      }
       &:first-child {
         margin-left: 0;
       }
@@ -119,11 +127,11 @@ $border-color: #d9d9d9;
       background: $blue;
       left: 0;
       bottom: -1px;
-      transition: all 0.25s;
+      transition: all 0.25s cubic-bezier(1, 1.67, 0.21, 0.84);
     }
   }
   &-content {
-    padding: 8px 0;
+    padding: 20px 8px;
   }
 }
 </style>

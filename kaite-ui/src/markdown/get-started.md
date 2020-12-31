@@ -1,23 +1,17 @@
 ## 下载与使用
 
-### 安装
-
-```
-    npm install alive-work-ui -S
-```
-
-## 引入 `alive-work-ui`
+## 引入 `kaite-ui`
 
 #### 完整引入
 
 ```
-    import 'alive-work-ui/package/lib/alive-work-ui.css'
+    import 'kaite-ui/package/lib/kaite-ui.css'
     import { createApp } from 'vue'
     import App from './App.vue'
-    import { AliveWorkUI } from 'alive-work-ui'
+    import { KaiteUI } from 'kaite-ui'
 
     createApp(App)
-      .use(AliveWorkUI)
+      .use(KaiteUI)
       .mount('#app')
 ```
 
