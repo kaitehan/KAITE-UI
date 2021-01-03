@@ -4,3 +4,4 @@ dist
 /dist
 *.local
 /.history
+/.idea
