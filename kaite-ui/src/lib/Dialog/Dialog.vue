@@ -65,6 +65,7 @@ export default {
         return true;
       }
     });
+
     const ok = () => {
       if (props.ok && props.ok() !== false) {
         // 等价于props.ok?.() !==false

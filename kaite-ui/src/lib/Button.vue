@@ -43,6 +43,7 @@ export default {
         [`kaite-${round ? "round" : "normal"}`]: round,
       };
     });
+
     return { classes };
   },
 };

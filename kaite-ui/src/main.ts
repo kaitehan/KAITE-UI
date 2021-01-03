@@ -2,7 +2,7 @@ import "./lib/kaite.scss";
 import "./index.scss";
 import "github-markdown-css";
 
-import { createApp } from "vue";
+import { createApp, nextTick } from "vue";
 import App from "./App.vue";
 
 import { router } from "./router";

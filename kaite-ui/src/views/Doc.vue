@@ -11,11 +11,20 @@
 </template>
 
 <script lang="ts">
-import { inject, Ref } from "vue";
+import { inject, onBeforeMount, onMounted, Ref } from "vue";
 import Topnav from "../components/Topnav.vue";
 import Aside from "./Aside.vue";
+import { router } from "../router";
 export default {
   components: { Topnav, Aside },
+  setup() {
+    onMounted(() => {
+      let main = document.querySelector("main");
+      router.beforeEach(() => {
+        main.scrollTop = 0;
+      });
+    });
+  },
 };
 </script>
 

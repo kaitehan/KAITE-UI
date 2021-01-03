@@ -5,7 +5,7 @@
 # git add . &&
 # git commit -m "update" &&
 # git branch -M master &&
-# git remote add origin git@github.com:FrankFang/gulu-ui-website-1.git &&
+# git remote add origin https://github.com/kaitehan/kaiteui.git &&
 # git push -f -u origin master &&
 # cd -
-# echo https://fangyinghang.com/gulu-ui-website-1/index.htm
+# echo https://kaitehan.github.io/kaiteui/index.htm
