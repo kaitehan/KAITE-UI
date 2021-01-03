@@ -8,6 +8,7 @@
     <slot></slot>
   </button>
 </template>
+
 <script lang="ts">
 import { computed } from "vue";
 export default {
@@ -48,6 +49,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 // 默认高度
 $h: 32px;

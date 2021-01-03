@@ -12,6 +12,7 @@
     </button>
   </div>
 </template>
+
 <script lang="ts">
 import { ref } from "vue";
 export default {
@@ -34,6 +35,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
 $h: 22px;
 $h2: $h - 4px;
