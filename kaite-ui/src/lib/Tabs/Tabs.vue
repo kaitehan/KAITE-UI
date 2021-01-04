@@ -55,7 +55,7 @@ export default {
         },
         // 解决异步
         {
-          flush: "sync", //效果更新需要缓冲时间
+          flush: "post", //效果更新需要缓冲时间
         }
       );
     });
@@ -132,6 +132,23 @@ $border-color: #d9d9d9;
   }
   &-content {
     padding: 20px 8px;
+  }
+  @keyframes kaite-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes button-hover {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-3px);
+    }
   }
 }
 </style>

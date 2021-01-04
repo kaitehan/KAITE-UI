@@ -5,7 +5,7 @@
     :disabled="loading ? true : disabled"
   >
     <span v-if="loading" class="kaite-loadingIndicator"></span>
-    <slot></slot>
+    <slot />
   </button>
 </template>
 
@@ -104,12 +104,6 @@ $grey: #909399;
   &.kaite-round {
     border-radius: $roundRadius;
   }
-  &[disabled] {
-    cursor: not-allowed;
-    color: #fff;
-    background-color: #ddd;
-    border: none;
-  }
 
   &.kaite-size-big {
     font-size: 24px;
@@ -148,6 +142,13 @@ $grey: #909399;
     background-color: #1976d2;
   }
 
+  &[disabled] {
+    cursor: not-allowed;
+    color: #fff;
+    background-color: #ddd;
+    border: none;
+  }
+
   > .kaite-loadingIndicator {
     width: 14px;
     height: 14px;
@@ -158,6 +159,23 @@ $grey: #909399;
     border-style: solid;
     border-width: 2px;
     animation: kaite-spin 1s infinite linear;
+  }
+  @keyframes kaite-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes button-hover {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-3px);
+    }
   }
 }
 </style>

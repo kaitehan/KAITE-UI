@@ -5,7 +5,7 @@
 #### 完整引入
 
 ```
-    import 'kaite-ui/package/lib/kaite-ui.css'
+    import 'kaite-ui/dist/lib/kaite.css'
     import { createApp } from 'vue'
     import App from './App.vue'
     import { KaiteUI } from 'kaite-ui'
@@ -22,7 +22,7 @@
 > 如果你只希望引入部分组件，比如 Button ，那么需要在 main.js 中写入以下内容：
 
 ```
-    import 'kaite-ui/package/lib/kaite-ui.css'
+    import 'kaite-ui/dist/lib/kaite.css'
     import { createApp } from 'vue'
     import { Button } from 'kaite-ui'
     import App from './App.vue'

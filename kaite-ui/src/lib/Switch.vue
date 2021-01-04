@@ -7,8 +7,8 @@
       :disabled="loading ? true : disabled"
     >
       <span><span class="kaite-switch-loading" v-if="loading"></span></span>
-      <p v-if="value">on</p>
-      <p v-else>off</p>
+      <p v-if="value" class="kaite-switch-on">on</p>
+      <p v-else class="kaite-switch-off">off</p>
     </button>
   </div>
 </template>
@@ -47,6 +47,7 @@ $h2: $h - 4px;
   line-height: $h;
   vertical-align: middle;
   border: none;
+  padding: 0;
   margin-bottom: 8px;
   background-color: #bfbfbf; //#1890ff
   border-radius: $h/2;
@@ -120,6 +121,23 @@ $h2: $h - 4px;
         width: $h + 2px;
         margin-left: -6px;
       }
+    }
+  }
+  @keyframes kaite-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes button-hover {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-3px);
     }
   }
 }
