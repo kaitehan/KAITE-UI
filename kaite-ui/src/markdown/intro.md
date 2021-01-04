@@ -1,5 +1,6 @@
 # 开始
 
+<br>
 欢迎使用 kaiteUI
 
 ---
@@ -11,11 +12,14 @@ kaiteUI 是一个简洁的前端 UI 框架,基于 vue3.0 的开源 UI 组件库,
 <br>
 <br>
 
-<!-- > #### 版本:**_1.1.0_**
+> #### 版本:**_1.0.4_**
 >
-> - 更新内容:<a href='#/Table'>添加 Table 组件</a>
+> - 更新内容:`修复已知BUG`
 
---- -->
+---
+
+<br>
+<br>
 
 > #### 版本:**_1.0.0_**
 >
@@ -23,6 +27,7 @@ kaiteUI 是一个简洁的前端 UI 框架,基于 vue3.0 的开源 UI 组件库,
 
 ---
 
+<br>
 <div style='display:flex;justify-content:space-between;margin:20px 0 '>
 <!-- <div>上一节:<a href='#/Use'>安装与使用</a></div>   -->
 <div>下一节:<a href='#/doc/install'>安装</a></div>  
