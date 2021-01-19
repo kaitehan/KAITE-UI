@@ -8,10 +8,10 @@
     import 'kaite-ui/dist/lib/kaite.css'
     import { createApp } from 'vue'
     import App from './App.vue'
-    import { KaiteUI } from 'kaite-ui'
+    import { kaiteUI } from 'kaite-ui'
 
     createApp(App)
-      .use(KaiteUI)
+      .use(kaiteUI)
       .mount('#app')
 ```
 
