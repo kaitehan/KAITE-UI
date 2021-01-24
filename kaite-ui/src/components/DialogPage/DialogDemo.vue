@@ -56,7 +56,6 @@ export default {
     Demo,
   },
   setup() {
-    // document.body.scrollTop = 0;
     return {
       DialogNormal,
       DialogOnCode,
