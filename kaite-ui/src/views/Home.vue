@@ -62,7 +62,7 @@ export default {
   clip-path: ellipse(80% 60% at 50% 40%);
 }
 .features {
-  margin: 64px auto;
+  margin: 0 auto;
   width: 400px;
   padding: 0 16px;
   @media (min-width: 800px) {

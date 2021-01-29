@@ -35,37 +35,30 @@ export default {
   height: 100vh;
   > .nav {
     flex-shrink: 0; //高度变化时不收缩
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
   > .content {
-    flex-grow: 1; //高度变化时占据剩余空间
-    padding-top: 75px;
+    display: flex;
+    padding-top: 60px;
     padding-left: 285px;
+    main {
+      height: 100vh;
+      overflow: auto;
+      flex-grow: 1;
+      padding: 60px;
+    }
     @media (max-width: 500px) {
-      padding-top: 75px;
       padding-left: 0;
+      main {
+        height: 80vh;
+        overflow: auto;
+        flex-grow: 1; //高度变化时,占据剩余空间
+        padding: 32px;
+      }
     }
   }
-}
-.content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  > aside {
-    flex-shrink: 0; //宽度变化时不收缩
-  }
-  > main {
-    flex-grow: 1; //宽度变化时占据剩余空间
-    padding: 60px;
-    // padding-left: 100px;
-    background-color: #fff;
-    @media (max-width: 500px) {
-      padding: 60px 30px;
-    }
-  }
-}
-
-main {
-  height: 100vh;
-  overflow: auto;
 }
 </style>

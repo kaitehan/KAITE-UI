@@ -43,16 +43,10 @@ export default {
     },
   },
   setup(props, context) {
-    // const original = reactive({ props });
-    // const copy = readonly(original);
     const inputval = (e: KeyboardEvent) => {
       context.emit("update:value", (e.target as HTMLInputElement).value);
     };
     const inputBlur = (e: FocusEvent) => {
-      // copy.props.value = (e.target as HTMLInputElement).value;
-      // context.emit("update:value", (e.target as HTMLInputElement).value);
-      // console.log(props.value);
-
       context.emit("update:modelValue", (e.target as HTMLInputElement).value);
     };
     return {
